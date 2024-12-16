@@ -1,4 +1,4 @@
-package com.example.supralternance.objects;
+package com.example.supralternance.candidatures;
 import lombok.Getter;
 import lombok.Setter;
 
