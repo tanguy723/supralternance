@@ -1,5 +1,5 @@
 package com.example.supralternance.candidaturesSpontanee;
-import com.example.supralternance.candidatures.Candidatures;
+import com.example.supralternance.candidatures.CandidaturesModel;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -11,15 +11,15 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table()
-public class CandidaturesSpontanee extends Candidatures {
+public class CandidaturesSpontaneeModel extends CandidaturesModel {
     public enum com{ ReseauSocial, Email, VisitePhysique, AppelTelephonique }
     private com moyenCommunication;
     
-    public CandidaturesSpontanee() {
+    public CandidaturesSpontaneeModel() {
 
     }
 
-    public CandidaturesSpontanee(com moyenCommunication) {
+    public CandidaturesSpontaneeModel(com moyenCommunication) {
             super();
             this.moyenCommunication = moyenCommunication;
     }

@@ -1,5 +1,5 @@
 package com.example.supralternance.candidatures;
 
-public class CandidaturesDAO {
+public class CandidaturesVue {
     
 }

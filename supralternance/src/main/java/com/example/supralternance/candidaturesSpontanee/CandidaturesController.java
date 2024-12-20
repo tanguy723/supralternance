@@ -1,5 +1,5 @@
 package com.example.supralternance.candidaturesSpontanee;
 
-public class CandidaturesSpontaneeService {
+public class CandidaturesController {
     
 }

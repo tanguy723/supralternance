@@ -1,5 +1,5 @@
 package com.example.supralternance.candidatureViaOffre;
 
-public class CandidatureViaOffreDAO {
+public class CandidatureViaOffreVue {
     
 }

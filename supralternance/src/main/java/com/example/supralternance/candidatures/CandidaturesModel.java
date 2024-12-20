@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 @Setter
 @Entity
 @Table()
-public class Candidatures {
+public class CandidaturesModel {
 
     private int idCandidature;
     private Date dateCandidature;
@@ -32,9 +32,9 @@ public class Candidatures {
     private String emailEntreprise;
 
     
-    public Candidatures() { }
+    public CandidaturesModel() { }
 
-    public Candidatures(int id,Date date, String nom, reponse repCandidature, String nomEntreprise, String addrEntreprise, String tel, String mail){
+    public CandidaturesModel(int id,Date date, String nom, reponse repCandidature, String nomEntreprise, String addrEntreprise, String tel, String mail){
         super();
         this.idCandidature = id;
         this.dateCandidature = date;
