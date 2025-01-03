@@ -1,6 +1,6 @@
-package com.example.supralternance.candidatureViaOffre;
+package com.example.supralternance.candidatures;
 
-import com.example.supralternance.candidatures.CandidaturesModel;
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -13,16 +13,16 @@ import lombok.Setter;
 @Table()
 public class CandidatureViaOffreModel extends CandidaturesModel{
     private String nomOffre;
-    private String lienOffre;
+    private String addresseOffre;
     private String descriptionOffre;
     private String originOffre;
 
     public CandidatureViaOffreModel() {}
 
-    CandidatureViaOffreModel(String nomOffre, String lienOffre, String setDescriptionOffre, String setOriginOffre){
-        super();
+    CandidatureViaOffreModel(int idCandidature, Date date, String nom, reponse repCandidature, String nomOffre, String lienOffre, String setDescriptionOffre, String setOriginOffre){
+        super(idCandidature, date, nom, repCandidature);
         this.nomOffre = nomOffre;
-        this.lienOffre = lienOffre;
+        this.addresseOffre = lienOffre;
         this.descriptionOffre = setDescriptionOffre;
         this.originOffre = setOriginOffre;
 

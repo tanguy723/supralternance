@@ -21,30 +21,19 @@ public class CandidaturesModel {
 
     private  reponse reponseCandidature;
 
-    private String nomEntreprise;
-
-    private String adresseEntreprise;
-
-
-    private String telephoneEntreprise;
-
-
-    private String emailEntreprise;
 
     
     public CandidaturesModel() { }
 
-    public CandidaturesModel(int id,Date date, String nom, reponse repCandidature, String nomEntreprise, String addrEntreprise, String tel, String mail){
+    public CandidaturesModel(int id,Date date, String nom, reponse repCandidature){
         super();
         this.idCandidature = id;
         this.dateCandidature = date;
         this.nomCandidature = nom;
         this.reponseCandidature = repCandidature;
-        this.nomEntreprise = nomEntreprise;
-        this.adresseEntreprise = addrEntreprise;
-        this.telephoneEntreprise = tel;
-        this.emailEntreprise = mail;
 
     }
 
 }
+
+

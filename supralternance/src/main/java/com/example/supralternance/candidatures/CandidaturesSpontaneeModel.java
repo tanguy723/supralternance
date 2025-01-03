@@ -1,5 +1,5 @@
-package com.example.supralternance.candidaturesSpontanee;
-import com.example.supralternance.candidatures.CandidaturesModel;
+package com.example.supralternance.candidatures;
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -19,8 +19,8 @@ public class CandidaturesSpontaneeModel extends CandidaturesModel {
 
     }
 
-    public CandidaturesSpontaneeModel(com moyenCommunication) {
-            super();
+    public CandidaturesSpontaneeModel(int idCandidature, Date date, String nom, reponse repCandidature, com moyenCommunication) {
+            super(idCandidature, date, nom, repCandidature);
             this.moyenCommunication = moyenCommunication;
     }
 }
