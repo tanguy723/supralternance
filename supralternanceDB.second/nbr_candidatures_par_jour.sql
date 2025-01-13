@@ -4,7 +4,7 @@
 
 CREATE TABLE IF NOT EXISTS public.nbr_candidatures_par_jour
 (
-   id_candidature VARCHAR(50),
+   id_candidature INT,
    id_semainier INT,
    jour_candidature DATE,
    nbr_candidature_par_jour VARCHAR(50),

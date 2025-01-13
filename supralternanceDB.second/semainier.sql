@@ -4,7 +4,7 @@
 
 CREATE TABLE IF NOT EXISTS public.semainier
 (
-  id_semainier INT,
+   id_semainier INT,
    objectif_candidature_par_semaine INT,
    id_objectif INT NOT NULL,
    PRIMARY KEY(id_semainier),

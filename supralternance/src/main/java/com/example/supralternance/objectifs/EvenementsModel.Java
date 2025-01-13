@@ -13,6 +13,8 @@ import lombok.Setter;
 @Table(name="evenements")
 public class EvenementsModel extends ObjectifsModel{
 
+    @Id
+    private Integer id_event;
     private String nomEvent;
     private Date dateEvent;
     private String descriptionEvent;

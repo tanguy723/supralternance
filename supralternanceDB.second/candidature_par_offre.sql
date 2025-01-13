@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS public.candidature_par_offre
    addresse_de_offre VARCHAR(50),
    description_de_offre VARCHAR(50),
    provenance_de_offre VARCHAR(50),
-   id_candidature VARCHAR(50) NOT NULL,
+   id_candidature INT NOT NULL,
    PRIMARY KEY(id_candidature_par_offre),
    UNIQUE(id_candidature),
    FOREIGN KEY(id_candidature) REFERENCES Candidatures(id_candidature)

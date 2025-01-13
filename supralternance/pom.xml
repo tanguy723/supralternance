@@ -12,7 +12,7 @@
 	<artifactId>supralternance</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>supralternance</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Projet Java "supralternance", une application pour aider les étudiants à gérer leurs recherches d'Alternance</description>
 	<url/>
 	<licenses>
 		<license/>

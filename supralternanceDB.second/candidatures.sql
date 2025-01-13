@@ -4,7 +4,7 @@
 
 CREATE TABLE IF NOT EXISTS public.candidatures
 (
-   id_candidature VARCHAR(50),
+   id_candidature INT,
    date_candidature DATE,
    poste_candidate VARCHAR(50),
    reponse VARCHAR(50),
