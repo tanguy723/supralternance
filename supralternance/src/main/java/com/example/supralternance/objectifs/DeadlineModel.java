@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table()
+@Table(name="deadline")
 public class DeadlineModel extends ObjectifsModel{
     private Date dateDeadline;
     

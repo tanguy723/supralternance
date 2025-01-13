@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table()
+@Table(name="candidature_par_offre")
 public class CandidatureViaOffreModel extends CandidaturesModel{
     private String nomOffre;
     private String addresseOffre;

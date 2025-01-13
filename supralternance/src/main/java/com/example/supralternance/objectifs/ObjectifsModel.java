@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table()
+@Table(name="objectifs")
 public class ObjectifsModel {
     private boolean accomplis;
 

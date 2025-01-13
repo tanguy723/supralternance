@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table()
+@Table(name="semainier")
 public class SemainierModel extends ObjectifsModel{
 
     private int ObjectifParSemaine;

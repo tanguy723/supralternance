@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table()
+@Table(name="evenements")
 public class EvenementsModel extends ObjectifsModel{
 
     private String nomEvent;

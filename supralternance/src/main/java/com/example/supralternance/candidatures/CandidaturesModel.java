@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table()
+@Table(name="candidatures")
 public class CandidaturesModel {
 
     private int idCandidature;

@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table()
+@Table(name="candidature_spontanée")
 public class CandidaturesSpontaneeModel extends CandidaturesModel {
     public enum com{ ReseauSocial, Email, VisitePhysique, AppelTelephonique }
     private com moyenCommunication;
