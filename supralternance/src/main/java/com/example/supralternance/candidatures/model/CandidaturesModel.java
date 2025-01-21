@@ -1,4 +1,4 @@
-package com.example.supralternance.candidatures;
+package com.example.supralternance.candidatures.model;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,6 +9,8 @@ import org.springframework.data.annotation.Id;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 
 @Getter
@@ -20,6 +22,8 @@ public class CandidaturesModel {
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name=  "id_candidature")
     private int id_candidature;
 
     @Column(name = "date_candidature")
@@ -36,7 +40,7 @@ public class CandidaturesModel {
     @Column(name="id_entreprise")
     private int id_entreprise;
 
-    
+
     public CandidaturesModel() { }
 
     public CandidaturesModel(int id,Date date, String nom, reponse repCandidature){

@@ -1,4 +1,4 @@
-package com.example.supralternance.candidatures;
+package com.example.supralternance.candidatures.model;
 
 import java.util.Date;
 
@@ -7,6 +7,8 @@ import org.springframework.data.annotation.Id;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -21,6 +23,8 @@ public class CandidatureViaOffreModel extends CandidaturesModel{
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name=  "id_candidature_spontanee")
     private Integer id_candidature_par_offre;
 
     @Column(name= "addresse_de_offre")
@@ -32,6 +36,9 @@ public class CandidatureViaOffreModel extends CandidaturesModel{
     @Column(name= "provenance_de_offre")
     private String originOffre;
 
+
+
+    
     public CandidatureViaOffreModel() {}
 
     CandidatureViaOffreModel(int idCandidature, Date date, String nom, reponse repCandidature, Integer id, String nomOffre, String lienOffre, String setDescriptionOffre, String setOriginOffre){
@@ -42,5 +49,6 @@ public class CandidatureViaOffreModel extends CandidaturesModel{
         this.originOffre = setOriginOffre;
 
     }
+
 
 }
