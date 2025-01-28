@@ -1,7 +1,4 @@
 package com.example.supralternance.candidatures.model;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.Date;
 
@@ -13,18 +10,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 
-@Getter
-@Setter
 @Entity
 @Table(name="candidatures")
 public class CandidaturesModel {
 
-    @Getter(AccessLevel.NONE)
-    @Setter(AccessLevel.NONE)
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name=  "id_candidature")
     private int id_candidature;
+
+   
 
     @Column(name = "date_candidature")
     private Date dateCandidature;
@@ -50,6 +46,38 @@ public class CandidaturesModel {
         this.nomCandidature = nom;
         this.reponseCandidature = repCandidature;
 
+    }
+
+    public Date getDateCandidature() {
+        return dateCandidature;
+    }
+
+    public void setDateCandidature(Date dateCandidature) {
+        this.dateCandidature = dateCandidature;
+    }
+
+    public String getNomCandidature() {
+        return nomCandidature;
+    }
+
+    public void setNomCandidature(String nomCandidature) {
+        this.nomCandidature = nomCandidature;
+    }
+
+    public reponse getReponseCandidature() {
+        return reponseCandidature;
+    }
+
+    public void setReponseCandidature(reponse reponseCandidature) {
+        this.reponseCandidature = reponseCandidature;
+    }
+
+    public int getId_entreprise() {
+        return id_entreprise;
+    }
+
+    public void setId_entreprise(int id_entreprise) {
+        this.id_entreprise = id_entreprise;
     }
 
 }
