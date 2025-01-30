@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="candidatures")
-public class CandidaturesModel {
+public class Candidatures {
 
 
     @Id
@@ -37,9 +37,9 @@ public class CandidaturesModel {
     private int id_entreprise;
 
 
-    public CandidaturesModel() { }
+    public Candidatures() { }
 
-    public CandidaturesModel(int id,Date date, String nom, reponse repCandidature){
+    public Candidatures(int id,Date date, String nom, reponse repCandidature){
         super();
         this.id_candidature = id;
         this.dateCandidature = date;

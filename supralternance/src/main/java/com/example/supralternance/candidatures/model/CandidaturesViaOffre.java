@@ -2,7 +2,6 @@ package com.example.supralternance.candidatures.model;
 
 import java.util.Date;
 
-
 import org.springframework.data.annotation.Id;
 
 import jakarta.persistence.Column;
@@ -18,7 +17,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name="candidature_par_offre")
-public class CandidatureViaOffreModel extends CandidaturesModel{
+public class CandidaturesViaOffre extends Candidatures{
 
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
@@ -39,9 +38,9 @@ public class CandidatureViaOffreModel extends CandidaturesModel{
 
 
     
-    public CandidatureViaOffreModel() {}
+    public CandidaturesViaOffre() {}
 
-    CandidatureViaOffreModel(int idCandidature, Date date, String nom, reponse repCandidature, Integer id, String nomOffre, String lienOffre, String setDescriptionOffre, String setOriginOffre){
+    CandidaturesViaOffre(int idCandidature, Date date, String nom, reponse repCandidature, Integer id, String nomOffre, String lienOffre, String setDescriptionOffre, String setOriginOffre){
         super(idCandidature, date, nom, repCandidature);
         this.id_candidature_par_offre = id;
         this.addresseOffre = lienOffre;

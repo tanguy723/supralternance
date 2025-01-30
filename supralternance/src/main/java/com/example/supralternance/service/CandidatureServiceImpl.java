@@ -2,22 +2,22 @@ package com.example.supralternance.service;
 
 
 
-import com.example.supralternance.candidatures.model.CandidaturesModel;
-import com.example.supralternance.repository.CandidaturesRepository;
+import com.example.supralternance.candidatures.model.Candidatures;
+import com.example.supralternance.repository.CandidaturesRepo;
 
 
 public class CandidatureServiceImpl implements CandidatureService{
 
-    private CandidaturesRepository candidatureRepository;
+    @SuppressWarnings("FieldMayBeFinal")
+    private CandidaturesRepo candidatureRepository;
 
-    public CandidatureServiceImpl(CandidaturesRepository cdR){
+    public CandidatureServiceImpl(CandidaturesRepo cdR){
         this.candidatureRepository = cdR;
     }
 
-   
-    
 
-    public Iterable<CandidaturesModel> getCandidatures(){
+    @Override
+    public Iterable<Candidatures> getCandidatures(){
             return candidatureRepository.findAll();
     }
 }

@@ -2,9 +2,9 @@ package com.example.supralternance.repository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.supralternance.candidatures.model.CandidaturesSpontaneeModel;
+import com.example.supralternance.candidatures.model.CandidaturesSpontanee;
 
 @Repository
-public interface CandidatureSpontaneeRepo extends CrudRepository<CandidaturesSpontaneeModel, Integer>{
+public interface CandidatureSpontaneeRepo extends CrudRepository<CandidaturesSpontanee, Integer>{
 
 }

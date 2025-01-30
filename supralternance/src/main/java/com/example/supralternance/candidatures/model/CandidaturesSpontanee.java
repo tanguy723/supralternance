@@ -17,7 +17,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name="candidature_spontanée")
-public class CandidaturesSpontaneeModel extends CandidaturesModel {
+public class CandidaturesSpontanee extends Candidatures {
 
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
@@ -31,11 +31,11 @@ public class CandidaturesSpontaneeModel extends CandidaturesModel {
     @Column(name="moyen_de_communication")
     private com moyenCommunication;
     
-    public CandidaturesSpontaneeModel() {
+    public CandidaturesSpontanee() {
 
     }
 
-    public CandidaturesSpontaneeModel(int idCandidature, Date date, String nom, reponse repCandidature, com moyenCommunication) {
+    public CandidaturesSpontanee(int idCandidature, Date date, String nom, reponse repCandidature, com moyenCommunication) {
             super(idCandidature, date, nom, repCandidature);
             this.moyenCommunication = moyenCommunication;
     }

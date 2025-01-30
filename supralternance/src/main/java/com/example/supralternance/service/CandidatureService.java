@@ -1,9 +1,11 @@
 package com.example.supralternance.service;
 
-import com.example.supralternance.candidatures.model.CandidaturesModel;
+import org.springframework.stereotype.Service;
 
+import com.example.supralternance.candidatures.model.Candidatures;
 
+@Service
 public interface CandidatureService {
 
-    public Iterable<CandidaturesModel> getCandidatures();
+    public Iterable<Candidatures> getCandidatures();
 }
