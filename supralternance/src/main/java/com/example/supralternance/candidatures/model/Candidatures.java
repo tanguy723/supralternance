@@ -1,6 +1,7 @@
 package com.example.supralternance.candidatures.model;
 
 import java.util.Date;
+import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
 
@@ -18,7 +19,7 @@ public class Candidatures {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name=  "id_candidature")
-    private int id_candidature;
+    private UUID id_candidature;
 
    
 
@@ -39,13 +40,22 @@ public class Candidatures {
 
     public Candidatures() { }
 
-    public Candidatures(int id,Date date, String nom, reponse repCandidature){
+    public Candidatures(UUID id,Date date, String nom, reponse repCandidature){
         super();
         this.id_candidature = id;
         this.dateCandidature = date;
         this.nomCandidature = nom;
         this.reponseCandidature = repCandidature;
 
+    }
+
+    
+    public UUID getId_candidature() {
+        return id_candidature;
+    }
+
+    public void setCandidatureID(UUID id) {
+        this.id_candidature = id;
     }
 
     public Date getDateCandidature() {
@@ -80,6 +90,9 @@ public class Candidatures {
         this.id_entreprise = id_entreprise;
     }
 
+
+
+    
 }
 
 

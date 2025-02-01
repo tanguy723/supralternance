@@ -8,4 +8,11 @@ import com.example.supralternance.candidatures.model.Candidatures;
 public interface CandidatureService {
 
     public Iterable<Candidatures> getCandidatures();
+
+    public Candidatures findCandidatures(int id);
+
+    public Candidatures saveCandidatures(Candidatures candidatures);
+    public Candidatures updateCandidatures(Candidatures candidatures);
+
+    public void delCandidatures(Candidatures candidatures);
 }
