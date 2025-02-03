@@ -1,7 +1,5 @@
 package com.example.supralternance.service;
 
-import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +30,7 @@ public class CandidatureViaOffreService {
 
      
     public CandidaturesViaOffre saveCandidaturesViaOffre(CandidaturesViaOffre candidaturesViaOffre){
-        candidaturesViaOffre.setCandidatureViaOffreID(UUID.randomUUID());
+
         return candidatureViaOffreRepo.save(candidaturesViaOffre);
     }
 

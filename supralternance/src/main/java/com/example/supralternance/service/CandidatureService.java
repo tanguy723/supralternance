@@ -1,7 +1,5 @@
 package com.example.supralternance.service;
 
-import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,22 +17,18 @@ public class CandidatureService {
     public CandidatureService(CandidaturesRepo cdR){
         this.candidatureRepository = cdR;
     }
-
-    
+  
     public Candidatures findCandidatures(int id){
         return candidatureRepository.getReferenceById(id);
     }
 
-
-    
+   
     public Iterable<Candidatures> getCandidatures(){
         return candidatureRepository.findAll();
     }
 
-
     
     public Candidatures saveCandidatures(Candidatures candidatures){
-        candidatures.setCandidatureID(UUID.randomUUID());
         return candidatureRepository.save(candidatures);
     }
 

@@ -18,7 +18,7 @@ import com.example.supralternance.service.CandidatureSpontaneeService;
 
 
 @RestController
-@RequestMapping("candidature_spontanée")
+@RequestMapping("/candidature_spontanée")
 public class CanidatureSpontaneeController {
 
     private final CandidatureSpontaneeService candidatureSpontaneeService;

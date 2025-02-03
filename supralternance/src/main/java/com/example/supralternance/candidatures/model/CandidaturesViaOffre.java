@@ -1,25 +1,27 @@
 package com.example.supralternance.candidatures.model;
 
 import java.util.Date;
-import java.util.UUID;
-
-import org.springframework.data.annotation.Id;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 
 
+
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) 
 @Table(name="candidature_par_offre")
 public class CandidaturesViaOffre extends Candidatures{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name=  "id_candidature_spontanee")
-    private UUID id_candidature_par_offre;
+    private int id_candidature_par_offre;
 
     @Column(name= "addresse_de_offre")
     private String addresseOffre;
@@ -58,7 +60,7 @@ public class CandidaturesViaOffre extends Candidatures{
 
     public CandidaturesViaOffre() {}
 
-    CandidaturesViaOffre(UUID idCandidature, Date date, String nom, reponse repCandidature, UUID id, String nomOffre, String lienOffre, String setDescriptionOffre, String setOriginOffre){
+    CandidaturesViaOffre(int idCandidature, Date date, String nom, reponse repCandidature, int id, String nomOffre, String lienOffre, String setDescriptionOffre, String setOriginOffre){
         super(idCandidature, date, nom, repCandidature);
         this.id_candidature_par_offre = id;
         this.addresseOffre = lienOffre;
@@ -67,7 +69,7 @@ public class CandidaturesViaOffre extends Candidatures{
 
     }
 
-    public void setCandidatureViaOffreID(UUID id_candidature_par_offre) {
+    public void setCandidatureViaOffreID(int id_candidature_par_offre) {
         this.id_candidature_par_offre = id_candidature_par_offre;
     }
 

@@ -1,17 +1,18 @@
 package com.example.supralternance.candidatures.model;
 
 import java.util.Date;
-import java.util.UUID;
-
-import org.springframework.data.annotation.Id;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) 
 @Table(name="candidatures")
 public class Candidatures {
 
@@ -19,7 +20,7 @@ public class Candidatures {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name=  "id_candidature")
-    private UUID id_candidature;
+    private int  id_candidature;
 
    
 
@@ -40,7 +41,7 @@ public class Candidatures {
 
     public Candidatures() { }
 
-    public Candidatures(UUID id,Date date, String nom, reponse repCandidature){
+    public Candidatures(int id,Date date, String nom, reponse repCandidature){
         super();
         this.id_candidature = id;
         this.dateCandidature = date;
@@ -50,11 +51,11 @@ public class Candidatures {
     }
 
     
-    public UUID getId_candidature() {
+    public int getId_candidature() {
         return id_candidature;
     }
 
-    public void setCandidatureID(UUID id) {
+    public void setCandidatureID(int id) {
         this.id_candidature = id;
     }
 
