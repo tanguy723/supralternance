@@ -1,47 +1,22 @@
 package com.example.supralternance.candidatures.model;
 import java.util.Date;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
-import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
-
-@Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) 
-@Table(name="candidature_spontanée")
+@Getter
+@Setter
 public class CandidaturesSpontanee extends Candidatures {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name=  "id_candidature_par_offre")
+
     private int  id_candidature_spontanee;
     
     public enum com{ ReseauSocial, Email, VisitePhysique, AppelTelephonique }
-
-    @Column(name="moyen_de_communication")
+    
     private com moyenCommunication;
     
     public CandidaturesSpontanee() {
-
-    }
-
-
-     public void setCandidatureSpontaneeID(int id_candidature_spontanee) {
-        this.id_candidature_spontanee = id_candidature_spontanee;
-    }
-
-    public com getMoyenCommunication() {
-        return moyenCommunication;
-    }
-
-
-    public void setMoyenCommunication(com moyenCommunication) {
-        this.moyenCommunication = moyenCommunication;
+        super();
     }
 
 
@@ -50,7 +25,12 @@ public class CandidaturesSpontanee extends Candidatures {
             this.moyenCommunication = moyenCommunication;
     }
 
-
+    @Override
+    public String toString() {
+        return "Candidatures [id=" + super.getId_candidature() + ", dateCandidature=" + super.getId_candidature() + 
+        ", nomCandidature=" + super.getNomCandidature() + ", reponseCandidature= " + super.getReponseCandidature() + 
+        ", moyenCommunication=" + this.moyenCommunication + "]";
+    }
 
 
    

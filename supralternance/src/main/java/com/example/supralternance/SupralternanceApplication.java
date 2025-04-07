@@ -1,14 +1,15 @@
 package com.example.supralternance;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
-@SpringBootApplication(scanBasePackages = {"candidatures.controller", "candidatures.model", "service"})
+
+@SpringBootApplication(scanBasePackages = {"candidatures.controller", "candidatures.model", "candidatures.service", "candidatures.repository"})
 @Configuration
-@EnableJpaRepositories("com.example.supralternance.repository")
+@EnableAutoConfiguration
 public class SupralternanceApplication{
 
 
@@ -17,6 +18,6 @@ public class SupralternanceApplication{
 		
 	}
 
-
+	
 
 }

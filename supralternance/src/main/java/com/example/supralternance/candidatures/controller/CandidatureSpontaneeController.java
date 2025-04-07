@@ -2,8 +2,10 @@ package com.example.supralternance.candidatures.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,16 +16,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.supralternance.candidatures.model.CandidaturesSpontanee;
-import com.example.supralternance.service.CandidatureSpontaneeService;
+import com.example.supralternance.service.impl.CandidatureSpontaneeServiceImpl;
 
 
 @RestController
 @RequestMapping("/candidature_spontanée")
-public class CanidatureSpontaneeController {
+@CrossOrigin(origins = "localhost:5432")
+public class CandidatureSpontaneeController {
 
-    private final CandidatureSpontaneeService candidatureSpontaneeService;
+    @Autowired
+    private final CandidatureSpontaneeServiceImpl candidatureSpontaneeService;
 
-    public CanidatureSpontaneeController(CandidatureSpontaneeService candidatureSpontaneeService){
+    public CandidatureSpontaneeController(CandidatureSpontaneeServiceImpl candidatureSpontaneeService){
         this.candidatureSpontaneeService= candidatureSpontaneeService;
     }
 

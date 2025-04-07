@@ -1,47 +1,17 @@
 package com.example.supralternance.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.example.supralternance.candidatures.model.Candidatures;
 import com.example.supralternance.candidatures.model.CandidaturesSpontanee;
-import com.example.supralternance.repository.CandidatureSpontaneeRepo;
 
-@Service
-public class CandidatureSpontaneeService {
-
-
+public interface CandidatureSpontaneeService {
     
-    @SuppressWarnings("FieldMayBeFinal")
-    private CandidatureSpontaneeRepo candidatureSpontaneeRepo;
+    CandidaturesSpontanee findCandidatureSpontanee(int id);
 
-    @Autowired
-    public CandidatureSpontaneeService(CandidatureSpontaneeRepo cdsR){
-        this.candidatureSpontaneeRepo = cdsR;
-    }
+    Iterable<CandidaturesSpontanee> getCandidaturesSpontanees();
 
-    
-    public Candidatures findCandidatureSpontanee(int id){
-        return candidatureSpontaneeRepo.getReferenceById(id);
-    }
+    CandidaturesSpontanee saveCandidatureSpontanee(CandidaturesSpontanee candidaturesSpontanee);
 
-    
-    public Iterable<CandidaturesSpontanee> getCandidaturesSpontanees(){
-        return candidatureSpontaneeRepo.findAll();
-    }
-    
-    
-    public CandidaturesSpontanee saveCandidatureSpontanee(CandidaturesSpontanee candidaturesSpontanee){
-        return candidatureSpontaneeRepo.save(candidaturesSpontanee);
-    }
+    CandidaturesSpontanee updateCandidatureSpontanee(CandidaturesSpontanee candidatureSpontanee);
 
-    
-    public Candidatures updateCandidatureSpontanee(CandidaturesSpontanee candidatureSpontanee){
-        return candidatureSpontaneeRepo.save(candidatureSpontanee);
-    }
+    void delCandidaturesSpontanee(CandidaturesSpontanee candidaturesSpontanee);
 
-    
-    public void delCandidaturesSpontanee(CandidaturesSpontanee candidaturesSpontanee){
-        candidatureSpontaneeRepo.delete(candidaturesSpontanee);
-    }
 }

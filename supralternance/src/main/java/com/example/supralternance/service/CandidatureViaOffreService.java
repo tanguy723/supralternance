@@ -1,46 +1,17 @@
 package com.example.supralternance.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.example.supralternance.candidatures.model.CandidaturesViaOffre;
-import com.example.supralternance.repository.CandidatureViaOffreRepo;
 
-@Service
-public class CandidatureViaOffreService {
-
+public interface CandidatureViaOffreService {
     
-    @SuppressWarnings("FieldMayBeFinal")
-    private CandidatureViaOffreRepo candidatureViaOffreRepo;
+    CandidaturesViaOffre findCandidatureParOffre(int id);
 
-    @Autowired
-    public CandidatureViaOffreService(CandidatureViaOffreRepo cdofR){
-        this.candidatureViaOffreRepo = cdofR;
-    }
+    Iterable<CandidaturesViaOffre> getCandidaturesViaOffres();
 
+    CandidaturesViaOffre saveCandidaturesViaOffre(CandidaturesViaOffre candidaturesViaOffre);
+
+    CandidaturesViaOffre updateCandidaturesViaOffre(CandidaturesViaOffre candidaturesViaOffre);
+
+    void delCandidaturesParOffre(CandidaturesViaOffre candidaturesOffre);
     
-    public CandidaturesViaOffre findCandidatureParOffre(int id){
-        return candidatureViaOffreRepo.getReferenceById(id);
-    }
-
-    
-    public Iterable<CandidaturesViaOffre> getCandidaturesViaOffres(){
-        return candidatureViaOffreRepo.findAll();
-    }
-
-     
-    public CandidaturesViaOffre saveCandidaturesViaOffre(CandidaturesViaOffre candidaturesViaOffre){
-
-        return candidatureViaOffreRepo.save(candidaturesViaOffre);
-    }
-
-    
-    public CandidaturesViaOffre updateCandidaturesViaOffre(CandidaturesViaOffre candidaturesViaOffre){
-        return candidatureViaOffreRepo.save(candidaturesViaOffre);
-    }
-
-    
-    public void delCandidaturesParOffre(CandidaturesViaOffre candidaturesOffre){
-        candidatureViaOffreRepo.delete(candidaturesOffre);
-    }
 }
