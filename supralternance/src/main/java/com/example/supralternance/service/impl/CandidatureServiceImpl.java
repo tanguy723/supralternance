@@ -14,6 +14,7 @@ public class CandidatureServiceImpl implements CandidatureService {
 
 
     @Autowired
+    @SuppressWarnings("FieldMayBeFinal")
     private CandidatureRepo candidatureRepository;
 
     @Autowired
@@ -46,7 +47,7 @@ public class CandidatureServiceImpl implements CandidatureService {
 
    
     @Override
-    public void delete( final Integer id){
+    public Integer delete( final Integer id){
         return this.candidatureRepository.delete(id);
     }
 

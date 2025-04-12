@@ -3,8 +3,6 @@ package com.example.supralternance.candidatures.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,34 +29,29 @@ public class CandidatureSpontaneeController {
         this.candidatureSpontaneeService= candidatureSpontaneeService;
     }
 
-    @GetMapping("/find/{id}")
-    public ResponseEntity<CandidaturesSpontanee> findCandidatureSpontParOffre (@PathVariable("id") int id){
-        CandidaturesSpontanee candidaturesSP = (CandidaturesSpontanee) candidatureSpontaneeService.findCandidatureSpontanee(id);
-        return new ResponseEntity<>( candidaturesSP , HttpStatus.OK);
+    @GetMapping("/{id}")
+    public CandidaturesSpontanee get (@PathVariable("id") final Integer id){
+        return this.candidatureSpontaneeService.get( id );
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<List<CandidaturesSpontanee>> getAllCandidatureViaOffres (){
-        List<CandidaturesSpontanee> candidaturesSP = (List<CandidaturesSpontanee>) candidatureSpontaneeService.getCandidaturesSpontanees();
-        return new ResponseEntity<>(candidaturesSP, HttpStatus.OK);
+    @GetMapping
+    public List< CandidaturesSpontanee > getAll(){
+        return this.candidatureSpontaneeService.getAll();
     }
 
+    @PostMapping
+    public CandidaturesSpontanee insert(@RequestBody final CandidaturesSpontanee candidatures){
+        return this.candidatureSpontaneeService.insert( candidatures);
+        }
 
-    @PostMapping("/add")
-    public ResponseEntity<CandidaturesSpontanee> saveNewCandidaturesParOffre (@RequestBody CandidaturesSpontanee candidatureSpontanee){
-        CandidaturesSpontanee candidaturesSPsave= candidatureSpontaneeService.saveCandidatureSpontanee(candidatureSpontanee);
-        return new ResponseEntity<>(candidaturesSPsave, HttpStatus.CREATED);    
-    }
+    @PutMapping
+    public CandidaturesSpontanee update(@RequestBody final CandidaturesSpontanee candidatures){
+        return this.candidatureSpontaneeService.update( candidatures);
+      }
 
-    @PutMapping("/update")
-    public ResponseEntity<CandidaturesSpontanee> updateCandidaturesParOffre(@RequestBody CandidaturesSpontanee candidatureSpontanee){
-        CandidaturesSpontanee candidaturesUpdateSP = (CandidaturesSpontanee) candidatureSpontaneeService.updateCandidatureSpontanee(candidatureSpontanee);
-        return new ResponseEntity<>(candidaturesUpdateSP, HttpStatus.OK);  
-    }
-
-    @DeleteMapping("/delete")
-    public void delCandidaturesParOffre(@RequestBody CandidaturesSpontanee candidatureSpontanee){
-        candidatureSpontaneeService.delCandidaturesSpontanee(candidatureSpontanee);
+    @DeleteMapping("/{id}")
+    public Integer delete(@PathVariable ( "id" ) final Integer id){
+        return this.candidatureSpontaneeService.delete( id );
         
     }
   

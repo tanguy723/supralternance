@@ -1,5 +1,7 @@
 package com.example.supralternance.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,7 @@ import com.example.supralternance.service.CandidatureSpontaneeService;
 @Service
 public class CandidatureSpontaneeServiceImpl implements CandidatureSpontaneeService {
 
+    @Autowired
     @SuppressWarnings("FieldMayBeFinal")
     private CandidatureSpontaneeRepo candidatureSpontaneeRepo;
 
@@ -18,29 +21,31 @@ public class CandidatureSpontaneeServiceImpl implements CandidatureSpontaneeServ
         this.candidatureSpontaneeRepo = cdsR;
     }
 
-    
     @Override
-    public CandidaturesSpontanee findCandidatureSpontanee(int id){
-        return candidatureSpontaneeRepo.getReferenceById(id);
+    public CandidaturesSpontanee get(final Integer id){
+        return this.candidatureSpontaneeRepo.get(id);
     }
 
     @Override
-    public Iterable<CandidaturesSpontanee> getCandidaturesSpontanees(){
-        return candidatureSpontaneeRepo.findAll();
-    }
-    
-    @Override
-    public CandidaturesSpontanee saveCandidatureSpontanee(CandidaturesSpontanee candidaturesSpontanee){
-        return candidatureSpontaneeRepo.save(candidaturesSpontanee);
+    public List<CandidaturesSpontanee> getAll(){
+        return this.candidatureSpontaneeRepo.getAll();
     }
 
-    @Override
-    public CandidaturesSpontanee updateCandidatureSpontanee(CandidaturesSpontanee candidatureSpontanee){
-        return candidatureSpontaneeRepo.save(candidatureSpontanee);
-    }
 
     @Override
-    public void delCandidaturesSpontanee(CandidaturesSpontanee candidaturesSpontanee){
-        candidatureSpontaneeRepo.delete(candidaturesSpontanee);
+    public CandidaturesSpontanee insert(final CandidaturesSpontanee candidatures){
+        return this.candidatureSpontaneeRepo.insert(candidatures);
+    }
+
+
+    @Override
+    public CandidaturesSpontanee update(final CandidaturesSpontanee candidatures){
+        return this.candidatureSpontaneeRepo.update(candidatures);
+    }
+
+   
+    @Override
+    public Integer delete( final Integer id){
+        return this.candidatureSpontaneeRepo.delete(id);
     }
 }

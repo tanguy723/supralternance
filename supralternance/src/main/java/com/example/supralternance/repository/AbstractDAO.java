@@ -9,7 +9,7 @@ public interface AbstractDAO < T > {
     T get( @Param( "id" ) final Integer id );
 
 
-    List< T > getAll();
+    List< T> getAll();
 
     T insert( @Param( "entity") final T entite);
 

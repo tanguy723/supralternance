@@ -1,5 +1,7 @@
 package com.example.supralternance.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,7 @@ import com.example.supralternance.service.CandidatureViaOffreService;
 public class CandidatureViaOffreServiceImpl implements CandidatureViaOffreService{
 
     
+    @Autowired
     @SuppressWarnings("FieldMayBeFinal")
     private CandidatureViaOffreRepo candidatureViaOffreRepo;
 
@@ -20,32 +23,30 @@ public class CandidatureViaOffreServiceImpl implements CandidatureViaOffreServic
     }
 
     @Override
-    public CandidaturesViaOffre findCandidatureParOffre(int id){
-        return candidatureViaOffreRepo.getReferenceById(id);
+    public CandidaturesViaOffre get(final Integer id){
+        return this.candidatureViaOffreRepo.get(id);
     }
 
-    
     @Override
-    public Iterable<CandidaturesViaOffre> getCandidaturesViaOffres(){
-        return candidatureViaOffreRepo.findAll();
+    public List<CandidaturesViaOffre> getAll(){
+        return this.candidatureViaOffreRepo.getAll();
     }
 
-    
-    @Override
-    public CandidaturesViaOffre saveCandidaturesViaOffre(CandidaturesViaOffre candidaturesViaOffre){
 
-        return candidatureViaOffreRepo.save(candidaturesViaOffre);
+    @Override
+    public CandidaturesViaOffre insert(final CandidaturesViaOffre candidatures){
+        return this.candidatureViaOffreRepo.insert(candidatures);
     }
 
-    
+
     @Override
-    public CandidaturesViaOffre updateCandidaturesViaOffre(CandidaturesViaOffre candidaturesViaOffre){
-        return candidatureViaOffreRepo.save(candidaturesViaOffre);
+    public CandidaturesViaOffre update(final CandidaturesViaOffre candidatures){
+        return this.candidatureViaOffreRepo.update(candidatures);
     }
 
-    
+   
     @Override
-    public void delCandidaturesParOffre(CandidaturesViaOffre candidaturesOffre){
-        candidatureViaOffreRepo.delete(candidaturesOffre);
+    public Integer delete( final Integer id){
+        return this.candidatureViaOffreRepo.delete(id);
     }
 }
