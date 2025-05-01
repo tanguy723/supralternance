@@ -12,6 +12,6 @@ public interface AbstractService < T > {
 
     T update( T entity );
 
-    Integer delete( Integer id );
+    void delete( Integer id );
     
 }

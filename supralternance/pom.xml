@@ -8,8 +8,9 @@
 		<version>3.3.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	
 	<groupId>com.example</groupId>
-	<artifactId>supralternance</artifactId>
+	<artifactId>supralternance_backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>supralternance</name>
 	<description>Projet Java "supralternance", une application pour aider les étudiants à gérer leurs recherches d'Alternance</description>
@@ -55,7 +56,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -7,9 +7,12 @@ import org.springframework.context.annotation.Configuration;
 
 
 
-@SpringBootApplication(scanBasePackages = {"candidatures.controller", "candidatures.model", "candidatures.service", "candidatures.repository"})
+@SpringBootApplication(scanBasePackages = {
+		"com.example.supralternance.candidatures.controller",
+		"com.example.supralternance.candidatures.model",
+		"com.example.supralternance.service",
+		"com.example.supralternance.repository"})
 @Configuration
-@EnableAutoConfiguration
 public class SupralternanceApplication{
 
 

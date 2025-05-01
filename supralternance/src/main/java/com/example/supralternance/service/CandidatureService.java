@@ -1,7 +1,9 @@
 package com.example.supralternance.service;
 
-import com.example.supralternance.candidatures.model.Candidatures;
+import com.example.supralternance.candidatures.model.Candidature;
 
-public interface CandidatureService extends AbstractService< Candidatures > {
-    
+import java.util.List;
+
+public interface CandidatureService extends AbstractService<Candidature> {
+
 }

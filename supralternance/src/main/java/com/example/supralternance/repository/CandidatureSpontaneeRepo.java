@@ -1,9 +1,9 @@
 package com.example.supralternance.repository;
 import org.springframework.stereotype.Repository;
 
-import com.example.supralternance.candidatures.model.CandidaturesSpontanee;
+import com.example.supralternance.candidatures.model.CandidatureSpontanee;
 
 @Repository
-public interface CandidatureSpontaneeRepo extends AbstractDAO< CandidaturesSpontanee >{
+public interface CandidatureSpontaneeRepo extends AbstractDAO<CandidatureSpontanee>{
 
 }

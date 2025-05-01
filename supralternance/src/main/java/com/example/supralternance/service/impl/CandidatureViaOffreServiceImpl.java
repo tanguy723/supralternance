@@ -1,52 +1,45 @@
 package com.example.supralternance.service.impl;
 
-import java.util.List;
-
+import com.example.supralternance.candidatures.model.CandidatureViaOffre;
+import com.example.supralternance.repository.CandidatureViaOffreRepo;
+import com.example.supralternance.service.CandidatureViaOffreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.supralternance.candidatures.model.CandidaturesViaOffre;
-import com.example.supralternance.repository.CandidatureViaOffreRepo;
-import com.example.supralternance.service.CandidatureViaOffreService;
+import java.util.List;
 
 @Service
-public class CandidatureViaOffreServiceImpl implements CandidatureViaOffreService{
+public class CandidatureViaOffreServiceImpl implements CandidatureViaOffreService {
 
-    
-    @Autowired
-    @SuppressWarnings("FieldMayBeFinal")
-    private CandidatureViaOffreRepo candidatureViaOffreRepo;
+    private final CandidatureViaOffreRepo candidatureViaOffreRepo;
 
     @Autowired
-    public CandidatureViaOffreServiceImpl(CandidatureViaOffreRepo cdofR){
-        this.candidatureViaOffreRepo = cdofR;
+    public CandidatureViaOffreServiceImpl(CandidatureViaOffreRepo candidatureViaOffreRepo) {
+        this.candidatureViaOffreRepo = candidatureViaOffreRepo;
     }
 
     @Override
-    public CandidaturesViaOffre get(final Integer id){
-        return this.candidatureViaOffreRepo.get(id);
+    public CandidatureViaOffre get(Integer id) {
+        return candidatureViaOffreRepo.findById(id).orElse(null);
     }
 
     @Override
-    public List<CandidaturesViaOffre> getAll(){
-        return this.candidatureViaOffreRepo.getAll();
+    public List<CandidatureViaOffre> getAll() {
+        return candidatureViaOffreRepo.findAll();
     }
 
-
     @Override
-    public CandidaturesViaOffre insert(final CandidaturesViaOffre candidatures){
-        return this.candidatureViaOffreRepo.insert(candidatures);
+    public CandidatureViaOffre insert(CandidatureViaOffre candidature) {
+        return candidatureViaOffreRepo.save(candidature);
     }
 
-
     @Override
-    public CandidaturesViaOffre update(final CandidaturesViaOffre candidatures){
-        return this.candidatureViaOffreRepo.update(candidatures);
+    public CandidatureViaOffre update(CandidatureViaOffre candidature) {
+        return candidatureViaOffreRepo.save(candidature);
     }
 
-   
     @Override
-    public Integer delete( final Integer id){
-        return this.candidatureViaOffreRepo.delete(id);
+    public void delete(Integer id) {
+        candidatureViaOffreRepo.deleteById(id);
     }
 }

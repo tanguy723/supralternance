@@ -3,15 +3,21 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CandidaturesComponent } from './candidatures/candidatures.component';
+
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CandidaturesComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
+
   ],
   providers: [
     provideClientHydration()

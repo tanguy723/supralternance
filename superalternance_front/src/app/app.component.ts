@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Candidatures } from '../models/candidatures';
+import { CandidatureSpontanee } from '../models/candidatureSpontanee';
 
 @Component({
   selector: 'app-root',

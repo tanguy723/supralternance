@@ -1,58 +1,50 @@
 package com.example.supralternance.candidatures.controller;
 
+import com.example.supralternance.candidatures.model.CandidatureSpontanee;
+import com.example.supralternance.service.CandidatureSpontaneeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.example.supralternance.candidatures.model.CandidaturesSpontanee;
-import com.example.supralternance.service.impl.CandidatureSpontaneeServiceImpl;
-
-
 @RestController
-@RequestMapping("/candidature_spontanée")
-@CrossOrigin(origins = "localhost:5432")
+@RequestMapping("/candidatures/spontanees")
+@CrossOrigin(origins = "http://localhost:5432")
 public class CandidatureSpontaneeController {
 
-    @Autowired
-    private final CandidatureSpontaneeServiceImpl candidatureSpontaneeService;
+    private final CandidatureSpontaneeService candidatureSpontaneeService;
 
-    public CandidatureSpontaneeController(CandidatureSpontaneeServiceImpl candidatureSpontaneeService){
-        this.candidatureSpontaneeService= candidatureSpontaneeService;
+    @Autowired
+    public CandidatureSpontaneeController(CandidatureSpontaneeService candidatureSpontaneeService) {
+        this.candidatureSpontaneeService = candidatureSpontaneeService;
     }
 
     @GetMapping("/{id}")
-    public CandidaturesSpontanee get (@PathVariable("id") final Integer id){
-        return this.candidatureSpontaneeService.get( id );
+    public ResponseEntity<CandidatureSpontanee> get(@PathVariable("id") Integer id) {
+        CandidatureSpontanee candidature = candidatureSpontaneeService.get(id);
+        return candidature != null ? ResponseEntity.ok(candidature) : ResponseEntity.notFound().build();
     }
 
     @GetMapping
-    public List< CandidaturesSpontanee > getAll(){
-        return this.candidatureSpontaneeService.getAll();
+    public List<CandidatureSpontanee> getAll() {
+        return candidatureSpontaneeService.getAll();
     }
 
     @PostMapping
-    public CandidaturesSpontanee insert(@RequestBody final CandidaturesSpontanee candidatures){
-        return this.candidatureSpontaneeService.insert( candidatures);
-        }
+    public ResponseEntity<CandidatureSpontanee> insert(@RequestBody CandidatureSpontanee candidature) {
+        return ResponseEntity.ok(candidatureSpontaneeService.insert(candidature));
+    }
 
-    @PutMapping
-    public CandidaturesSpontanee update(@RequestBody final CandidaturesSpontanee candidatures){
-        return this.candidatureSpontaneeService.update( candidatures);
-      }
+    @PutMapping("/{id}")
+    public ResponseEntity<CandidatureSpontanee> update(@PathVariable Integer id, @RequestBody CandidatureSpontanee candidature) {
+        candidature.setIdCandidatureSpontanee(id);  // MAJ explicite si tu tiens à ce champ
+        return ResponseEntity.ok(candidatureSpontaneeService.update(candidature));
+    }
 
     @DeleteMapping("/{id}")
-    public Integer delete(@PathVariable ( "id" ) final Integer id){
-        return this.candidatureSpontaneeService.delete( id );
-        
+    public ResponseEntity<Void> delete(@PathVariable("id") Integer id) {
+        candidatureSpontaneeService.delete(id);
+        return ResponseEntity.noContent().build();
     }
-  
 }
