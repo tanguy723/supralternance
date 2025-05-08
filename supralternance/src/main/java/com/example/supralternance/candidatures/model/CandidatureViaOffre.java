@@ -17,8 +17,13 @@ public class CandidatureViaOffre extends Candidature {
     @Column(name = "id_candidature_par_offre")
     private int idCandidatureParOffre;
 
+    @Column(name= "addresse_de_offre")
     private String addresseOffre;
+
+    @Column(name= "description_de_offre")
     private String descriptionOffre;
+
+    @Column(name= "provenance_de_offre")
     private String originOffre;
 
     public CandidatureViaOffre() {

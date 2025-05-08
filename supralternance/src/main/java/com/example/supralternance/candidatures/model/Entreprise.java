@@ -15,16 +15,16 @@ public class Entreprise {
     @Column(name = "id_entreprise")
     private int idEntreprise;
 
-    @Column(name = "nom")
+    @Column(name = "nom_entreprise_concerne")
     private String nom;
 
-    @Column(name = "email_entreprise")
+    @Column(name = "addresse_electronique")
     private String emailEntreprise;
 
-    @Column(name = "telephone_entreprise")
+    @Column(name = "telephone")
     private String telephoneEntreprise;
 
-    @Column(name = "addresse_entreprise")
+    @Column(name = "addresse_phys")
     private String addresseEntreprise;
 
     public Entreprise() {}

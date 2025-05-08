@@ -17,9 +17,11 @@ public class CandidatureSpontanee extends Candidature {
     @Column(name = "id_candidature_spontanee")
     private int idCandidatureSpontanee;
 
+
     public enum com { ReseauSocial, Email, VisitePhysique, AppelTelephonique }
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "moyen_de_communication")
     private com moyenCommunication;
 
     public CandidatureSpontanee() {
