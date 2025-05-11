@@ -1,0 +1,35 @@
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label>Date:</label>
+    <input type="date" [(ngModel)]="candidatures_par_offre.dateCandidature" name="date" required>
+  </div>
+  <div>
+    <label>Nom:</label>
+    <input type="text" [(ngModel)]="candidatures_par_offre.nomCandidature" name="nom" required>
+  </div>
+  <div>
+    <label>Reponse:</label>
+    <select [(ngModel)]="candidatures_par_offre.reponseCandidature" name="reponse" required>
+      <option value="Positif">Accepté</option>
+      <option value="Negatif">Refusé</option>
+      <option value="Attente">En Attente</option>
+    </select>
+  </div>
+ <div>
+   <label>Nom de l'offre: </label>
+   <input type="text" [(ngModel)]="candidatures_par_offre.nomOffre" name="nomOffre" required>
+ </div>
+  <div>
+    <label>Lien de l'offre: </label>
+    <input type="text" [(ngModel)]="candidatures_par_offre.lienOffre" name="lienOffre" required>
+  </div>
+  <div>
+    <label>Description de l'offre: </label>
+    <input type="text" [(ngModel)]="candidatures_par_offre.descriptionOffre" name="descriptionOffre" required>
+  </div>
+  <div>
+    <label>Origine de l'offre: </label>
+    <input type="text" [(ngModel)]="candidatures_par_offre.originOffre" name="originOffre" required>
+  </div>
+  <app-entreprises></app-entreprises>
+</form>

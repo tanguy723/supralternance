@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label>Date:</label>
+    <input type="date" [(ngModel)]="candidatures_spontanee.dateCandidature" name="date" required>
+  </div>
+  <div>
+    <label>Nom:</label>
+    <input type="text" [(ngModel)]="candidatures_spontanee.nomCandidature" name="nom" required>
+  </div>
+  <div>
+    <label>Reponse:</label>
+    <select [(ngModel)]="candidatures_spontanee.reponseCandidature" name="reponse" required>
+      <option value="Positif">Accepté</option>
+      <option value="Negatif">Refusé</option>
+      <option value="Attente">En Attente</option>
+    </select>
+  </div>
+  <div>
+    <label>Moyen de communication</label>
+    <select [(ngModel)]="candidatures_spontanee.com" name="com" required>
+      <option value="Reseau Social">Reseau Social</option>
+      <option value="Email">Par mail</option>
+      <option value="VisitePhysique">Visite en présentiel</option>
+      <option value="AppelTelephonique">Appel téléphonique</option>
+    </select>
+  </div>
+  <app-entreprises></app-entreprises>
+</form>

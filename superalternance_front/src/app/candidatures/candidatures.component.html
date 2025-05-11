@@ -1,3 +1,19 @@
-<p> Candidatures </p>
-
-<
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label>Date:</label>
+    <input type="date" [(ngModel)]="candidatures.dateCandidature" name="date" required>
+  </div>
+  <div>
+    <label>Nom:</label>
+    <input type="text" [(ngModel)]="candidatures.nomCandidature" name="nom" required>
+  </div>
+  <div>
+    <label>Reponse:</label>
+    <select [(ngModel)]="candidatures.reponseCandidature" name="reponse" required>
+      <option value="Positif">Accepté</option>
+      <option value="Negatif">Refusé</option>
+      <option value="Attente">En Attente</option>
+    </select>
+  </div>
+  <app-entreprises></app-entreprises>
+</form>

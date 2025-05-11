@@ -17,7 +17,7 @@ export class CandidatureService {
     return this.http.get<Candidatures[]>(this.apiUrl);  // Requête GET pour récupérer toutes les candidatures
   }
 
-  getCandidature(id: number): Observable<Candidatures> {
+  getCandidature(id: Candidatures): Observable<Candidatures> {
     return this.http.get<Candidatures>(`${this.apiUrl}/${id}`);  // Requête GET pour récupérer une candidature spécifique
   }
 

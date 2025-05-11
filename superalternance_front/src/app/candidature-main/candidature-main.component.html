@@ -1,0 +1,33 @@
+<div>
+  <h2>Choisir le type de candidature</h2>
+  <div>
+    <label>
+      <input type="radio" name="formType" (change)="onFormChange('candidatures')" [checked]="selectedForm === 'normale'">
+      Candidature Standard
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" name="formType" (change)="onFormChange('candidature_spontanee')" [checked]="selectedForm === 'spontanee'">
+      Candidature Spontanée
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" name="formType" (change)="onFormChange('candidature_offre')" [checked]="selectedForm === 'offre'">
+      Candidature par Offre
+    </label>
+  </div>
+</div>
+
+<div *ngIf="selectedForm === 'candidatures'">
+  <app-candidatures></app-candidatures>
+</div>
+
+<div *ngIf="selectedForm === 'candidature_spontanee'">
+  <app-candidature-spontanee></app-candidature-spontanee>
+</div>
+
+<div *ngIf="selectedForm === 'candidature_offre'">
+  <app-candidature-par-offre></app-candidature-par-offre>
+</div>
