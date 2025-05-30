@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/candidatures/spontanees")
-@CrossOrigin(origins = "http://localhost:5432")
+@CrossOrigin(origins = "http://localhost:4200")  // Autorise Angular à accéder à l'API
 public class CandidatureSpontaneeController {
 
     private final CandidatureSpontaneeService candidatureSpontaneeService;
@@ -36,11 +36,6 @@ public class CandidatureSpontaneeController {
         return ResponseEntity.ok(candidatureSpontaneeService.insert(candidature));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<CandidatureSpontanee> update(@PathVariable Integer id, @RequestBody CandidatureSpontanee candidature) {
-        candidature.setIdCandidatureSpontanee(id);  // MAJ explicite si tu tiens à ce champ
-        return ResponseEntity.ok(candidatureSpontaneeService.update(candidature));
-    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") Integer id) {

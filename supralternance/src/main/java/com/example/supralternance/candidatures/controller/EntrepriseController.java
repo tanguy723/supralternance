@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/entreprises")
-@CrossOrigin(origins = "http://localhost:5432") // <-- à adapter à ton front Angular si nécessaire
+@CrossOrigin(origins = "http://localhost:4200")  // Autorise Angular à accéder à l'API
 public class EntrepriseController {
 
     private final EntrepriseService entrepriseService;

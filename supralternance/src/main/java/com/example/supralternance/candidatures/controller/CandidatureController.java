@@ -11,7 +11,7 @@ import com.example.supralternance.service.CandidatureService;
 
 @RestController
 @RequestMapping("/candidatures")
-@CrossOrigin(origins = "http://localhost:5432") // Autorise Angular à accéder à l'API
+@CrossOrigin(origins = "http://localhost:4200") // Autorise Angular à accéder à l'API
 public class CandidatureController {
 
     private final CandidatureService candidatureService;

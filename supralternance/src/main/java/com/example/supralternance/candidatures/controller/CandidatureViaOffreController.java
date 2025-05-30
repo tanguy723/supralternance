@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/candidatures/offres")
-@CrossOrigin(origins = "http://localhost:5432")
+@CrossOrigin(origins = "http://localhost:4200")  // Autorise Angular à accéder à l'API
 public class CandidatureViaOffreController {
 
     private final CandidatureViaOffreService candidatureViaOffreService;
@@ -36,11 +36,6 @@ public class CandidatureViaOffreController {
         return ResponseEntity.ok(candidatureViaOffreService.insert(candidature));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<CandidatureViaOffre> update(@PathVariable Integer id, @RequestBody CandidatureViaOffre candidature) {
-        candidature.setIdCandidatureParOffre(id);
-        return ResponseEntity.ok(candidatureViaOffreService.update(candidature));
-    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") Integer id) {
