@@ -11,7 +11,7 @@ import {CandidatureParOffreComponent} from '../candidature-par-offre/candidature
 })
 export class CandidatureParOffreService {
 
-  private apiUrl = 'http://localhost:8084.candidatures.offres';
+  private apiUrl = 'http://localhost:8084/candidatures/offres';
 
   constructor(private http: HttpClient) { }
 

@@ -1,19 +1,21 @@
-<form (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div>
     <label>Date:</label>
-    <input type="date" [(ngModel)]="candidatures.dateCandidature" name="date" required>
+    <input type="date" formControlName="dateCandidature" name="date" required>
   </div>
   <div>
     <label>Nom:</label>
-    <input type="text" [(ngModel)]="candidatures.nomCandidature" name="nom" required>
+    <input type="text" formControlName="nomCandidature" name="nom" required>
   </div>
   <div>
     <label>Reponse:</label>
-    <select [(ngModel)]="candidatures.reponseCandidature" name="reponse" required>
+    <select formControlName="reponseCandidature" name="reponse" required>
       <option value="Positif">Accepté</option>
       <option value="Negatif">Refusé</option>
       <option value="Attente">En Attente</option>
     </select>
   </div>
   <app-entreprises></app-entreprises>
+
+  <button type="submit">Envoyer</button>
 </form>

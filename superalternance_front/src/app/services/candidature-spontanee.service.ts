@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class CandidatureSpontaneeService {
 
-  private apiUrl = 'http://localhost:8084.candidatures.spontanees';
+  private apiUrl = 'http://localhost:8084/candidatures/spontanees';
 
   constructor(private http: HttpClient) { }
 

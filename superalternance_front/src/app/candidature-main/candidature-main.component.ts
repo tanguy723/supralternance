@@ -6,10 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './candidature-main.component.css'
 })
 export class CandidatureMainComponent {
-  selectedForm: string = 'candidatures';
+  selectedForm: string = 'normale';
 
-  onFormChange(formType: string) {
-    this.selectedForm = formType;
-  }
 
 }

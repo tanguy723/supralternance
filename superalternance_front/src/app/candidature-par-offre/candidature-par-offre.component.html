@@ -1,15 +1,15 @@
-<form (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div>
     <label>Date:</label>
-    <input type="date" [(ngModel)]="candidatures_par_offre.dateCandidature" name="date" required>
+    <input type="date" formControlName="dateCandidature" required>
   </div>
   <div>
     <label>Nom:</label>
-    <input type="text" [(ngModel)]="candidatures_par_offre.nomCandidature" name="nom" required>
+    <input type="text" formControlName="nomCandidature" required>
   </div>
   <div>
     <label>Reponse:</label>
-    <select [(ngModel)]="candidatures_par_offre.reponseCandidature" name="reponse" required>
+    <select formControlName="reponseCandidature" required>
       <option value="Positif">Accepté</option>
       <option value="Negatif">Refusé</option>
       <option value="Attente">En Attente</option>
@@ -17,19 +17,20 @@
   </div>
  <div>
    <label>Nom de l'offre: </label>
-   <input type="text" [(ngModel)]="candidatures_par_offre.nomOffre" name="nomOffre" required>
+   <input type="text" formControlName="nomOffre" required>
  </div>
   <div>
     <label>Lien de l'offre: </label>
-    <input type="text" [(ngModel)]="candidatures_par_offre.lienOffre" name="lienOffre" required>
+    <input type="text" formControlName="lienOffre" required>
   </div>
   <div>
     <label>Description de l'offre: </label>
-    <input type="text" [(ngModel)]="candidatures_par_offre.descriptionOffre" name="descriptionOffre" required>
+    <input type="text" formControlName="descriptionOffre" required>
   </div>
   <div>
     <label>Origine de l'offre: </label>
-    <input type="text" [(ngModel)]="candidatures_par_offre.originOffre" name="originOffre" required>
+    <input type="text" formControlName="originOffre" required>
   </div>
   <app-entreprises></app-entreprises>
+  <button type="submit">Envoyer</button>
 </form>

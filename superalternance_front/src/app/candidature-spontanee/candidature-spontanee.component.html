@@ -1,15 +1,15 @@
-<form (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div>
     <label>Date:</label>
-    <input type="date" [(ngModel)]="candidatures_spontanee.dateCandidature" name="date" required>
+    <input type="date" formControlName="dateCandidature" name="date" required>
   </div>
   <div>
     <label>Nom:</label>
-    <input type="text" [(ngModel)]="candidatures_spontanee.nomCandidature" name="nom" required>
+    <input type="text" formControlName="nomCandidature" name="nom" required>
   </div>
   <div>
     <label>Reponse:</label>
-    <select [(ngModel)]="candidatures_spontanee.reponseCandidature" name="reponse" required>
+    <select formControlName="reponseCandidature" name="reponse" required>
       <option value="Positif">Accepté</option>
       <option value="Negatif">Refusé</option>
       <option value="Attente">En Attente</option>
@@ -17,7 +17,7 @@
   </div>
   <div>
     <label>Moyen de communication</label>
-    <select [(ngModel)]="candidatures_spontanee.com" name="com" required>
+    <select formControlName="com" name="com" required>
       <option value="Reseau Social">Reseau Social</option>
       <option value="Email">Par mail</option>
       <option value="VisitePhysique">Visite en présentiel</option>
@@ -25,4 +25,5 @@
     </select>
   </div>
   <app-entreprises></app-entreprises>
+  <button type="submit">Envoyer</button>
 </form>
