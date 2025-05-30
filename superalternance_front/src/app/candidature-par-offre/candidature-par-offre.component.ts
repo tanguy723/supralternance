@@ -32,8 +32,6 @@ export class CandidatureParOffreComponent implements OnInit {
   }
 
 
-
-
   onSubmit(): void {
     if (this.form.valid && this.entreprisesComponent.form.valid ) {
       const entrepriseData = this.entreprisesComponent.form.value;
