@@ -1,9 +1,5 @@
 package com.example.supralternance.candidatures.controller;
-import com.example.supralternance.candidatures.model.Candidature;
-import com.example.supralternance.candidatures.model.CandidatureSpontanee;
 import com.example.supralternance.candidatures.model.Entreprise;
-import com.example.supralternance.service.CandidatureService;
-import com.example.supralternance.service.CandidatureSpontaneeService;
 import com.example.supralternance.service.EntrepriseService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
